@@ -1,5 +1,6 @@
 %define		snap	20060122
 Summary:	Programs for mounting, unmounting and ejecting storage devices
+Summary(pl):	Programy do montowania, odmontowywania i wysuwania urz±dzeñ do przechowywania danych
 Name:		gnome-mount
 Version:	0.4
 Release:	1
@@ -22,13 +23,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Programs for mounting, unmounting and ejecting storage devices.
 
+%description -l pl
+Programy do montowania, odmontowywania i wysuwania urz±dzeñ do
+przechowywania danych.
+
 %package devel
 Summary:	gnome-mount development files
+Summary(pl):	Pliki programistyczne gnome-mount.
 Group:		Development
 Requires:	pkgconfig
 
 %description devel
 This is the package containing gnome-mount development files.
+
+%description devel -l pl
+Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
