@@ -18,8 +18,8 @@ BuildRequires:	intltool
 BuildRequires:	libglade2-devel
 BuildRequires:	libtool
 Requires(post,preun):	GConf2
-Obsoletes:	hal-fstab-sync
 Provides:	storage-methods
+Obsoletes:	hal-fstab-sync
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +31,7 @@ przechowywania danych.
 
 %package devel
 Summary:	gnome-mount development files
-Summary(pl):	Pliki programistyczne gnome-mount.
+Summary(pl):	Pliki programistyczne gnome-mount
 Group:		Development
 Requires:	pkgconfig
 
