@@ -3,12 +3,13 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl):	Programy do montowania, odmontowywania i wysuwania urz±dzeñ do przechowywania danych
 Name:		gnome-mount
 Version:	0.4
-Release:	1.%{snap}.1
+Release:	1.%{snap}.2
 License:	GPL v.2
 Group:		Applications
 #Source0:	http://freedesktop.org/~david/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
 # Source0-md5:	3106ee5ae8640d82a805cb0f9c5bf34d
+Patch0:		%{name}-configure.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.31
@@ -18,8 +19,6 @@ BuildRequires:	intltool
 BuildRequires:	libglade2-devel
 BuildRequires:	libtool
 Requires(post,preun):	GConf2
-Provides:	storage-methods
-Obsoletes:	hal-fstab-sync
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,6 +42,7 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
