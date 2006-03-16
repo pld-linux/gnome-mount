@@ -1,0 +1,11 @@
+--- gnome-mount-0.4/src/gnome-mount.c.orig	2006-03-16 15:19:01.000000000 +0000
++++ gnome-mount-0.4/src/gnome-mount.c	2006-03-16 15:19:17.000000000 +0000
+@@ -645,7 +645,7 @@
+  g_ptr_array_add (options, "flush");
+ */
+ 		if (opts & MOUNT_SHORTNAME)
+-			g_ptr_array_add (options, "shortname=winnt");
++			g_ptr_array_add (options, "shortname=lower");
+ 
+ 		if (opts & MOUNT_UID) {
+ 			snprintf (uidbuf, sizeof (uidbuf) - 1, "uid=%u", getuid ());
