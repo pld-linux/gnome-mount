@@ -2,7 +2,7 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl):	Programy do montowania, odmontowywania i wysuwania urz±dzeñ do przechowywania danych
 Name:		gnome-mount
 Version:	0.4
-Release:	4
+Release:	5
 License:	GPL v.2
 Group:		Applications
 Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
@@ -13,16 +13,16 @@ Patch2:		%{name}-no_media.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.60
-BuildRequires:	gnome-keyring-devel
-BuildRequires:	gtk+2-devel >= 2:2.8.0
+BuildRequires:	gnome-keyring-devel >= 0.4.9
+BuildRequires:	gtk+2-devel >= 2:2.9.2
 BuildRequires:	hal-devel >= 0.5.7
 BuildRequires:	intltool
-BuildRequires:	libglade2-devel
-BuildRequires:	libgnomeui-devel
+BuildRequires:	libglade2-devel >= 1:2.5.1
+BuildRequires:	libgnomeui-devel >= 2.15.1
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel
-Requires(post,preun):	GConf2
-Requires:	nautilus
+BuildRequires:	nautilus-devel >= 2.15.1
+Requires(post,preun):	GConf2 >= 2.14.0
+Requires:	nautilus > 2.15.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
