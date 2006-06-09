@@ -22,7 +22,7 @@ BuildRequires:	libgnomeui-devel >= 2.15.1
 BuildRequires:	libtool
 BuildRequires:	nautilus-devel >= 2.15.1
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	nautilus > 2.15.1
+Requires:	nautilus >= 2.15.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
