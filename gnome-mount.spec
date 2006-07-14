@@ -2,7 +2,7 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl):	Programy do montowania, odmontowywania i wysuwania urz±dzeñ do przechowywania danych
 Name:		gnome-mount
 Version:	0.4
-Release:	5
+Release:	6
 License:	GPL v.2
 Group:		Applications
 Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
@@ -12,17 +12,17 @@ Patch1:		%{name}-drive_mount.patch
 Patch2:		%{name}-no_media.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	dbus-glib-devel >= 0.60
-BuildRequires:	gnome-keyring-devel >= 0.4.9
-BuildRequires:	gtk+2-devel >= 2:2.9.2
+BuildRequires:	dbus-glib-devel >= 0.61
+BuildRequires:	gnome-keyring-devel >= 0.5.1
+BuildRequires:	gtk+2-devel >= 2:2.10.0
 BuildRequires:	hal-devel >= 0.5.7
 BuildRequires:	intltool
-BuildRequires:	libglade2-devel >= 1:2.5.1
-BuildRequires:	libgnomeui-devel >= 2.15.1
+BuildRequires:	libglade2-devel >= 1:2.6.0
+BuildRequires:	libgnomeui-devel >= 2.15.2
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel >= 2.15.1
+BuildRequires:	nautilus-devel >= 2.15.4
 Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	nautilus >= 2.15.1
+Requires:	nautilus >= 2.15.4
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -58,6 +58,7 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-nautilus-extension
 %{__make}
