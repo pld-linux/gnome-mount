@@ -84,6 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/nautilus/extensions-1.0/*.so
 %{_datadir}/%{name}
+%{_mandir}/man1/*
 %{_sysconfdir}/gconf/schemas/gnome-mount.schemas
 
 %files devel
