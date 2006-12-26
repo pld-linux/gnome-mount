@@ -13,14 +13,14 @@ BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.61
 BuildRequires:	gnome-keyring-devel >= 0.5.1
 BuildRequires:	gtk+2-devel >= 2:2.10.0
-BuildRequires:	hal-devel >= 0.5.7
+BuildRequires:	hal-devel >= 0.5.8.1
 BuildRequires:	intltool
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.15.2
+BuildRequires:	libgnomeui-devel >= 2.16.1
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel >= 2.15.4
-Requires(post,preun):	GConf2 >= 2.14.0
-Requires:	nautilus >= 2.15.4
+BuildRequires:	nautilus-devel >= 2.16.0
+Requires(post,preun):	GConf2 >= 2.16.0
+Requires:	nautilus >= 2.16.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,7 +54,6 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-nautilus-extension
 %{__make}
