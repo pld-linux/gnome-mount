@@ -1,5 +1,5 @@
 Summary:	Programs for mounting, unmounting and ejecting storage devices
-Summary(pl.UTF-8):   Programy do montowania, odmontowywania i wysuwania urządzeń do przechowywania danych
+Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń do przechowywania danych
 Name:		gnome-mount
 <<<<<<< gnome-mount.spec
 Version:	0.4
@@ -44,7 +44,7 @@ przechowywania danych.
 
 %package devel
 Summary:	gnome-mount development files
-Summary(pl.UTF-8):   Pliki programistyczne gnome-mount
+Summary(pl.UTF-8):	Pliki programistyczne gnome-mount
 Group:		Development
 Requires:	pkgconfig
 
