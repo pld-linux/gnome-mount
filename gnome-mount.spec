@@ -1,24 +1,13 @@
 Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń do przechowywania danych
 Name:		gnome-mount
-<<<<<<< gnome-mount.spec
-Version:	0.4
-Release:	4.1
-=======
 Version:	0.5
 Release:	2
->>>>>>> 1.18
 License:	GPL v.2
 Group:		Applications
 Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	76622ff9af0131fc44687aed7204f84f
 Patch0:		%{name}-shortname.patch
-<<<<<<< gnome-mount.spec
-Patch1:		%{name}-drive_mount.patch
-Patch2:		%{name}-no_media.patch
-Patch3:		%{name}-options.patch
-=======
->>>>>>> 1.18
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.61
@@ -57,12 +46,6 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 %prep
 %setup -q
 %patch0 -p1
-<<<<<<< gnome-mount.spec
-%patch1	-p0
-%patch2 -p0
-%patch3 -p1
-=======
->>>>>>> 1.18
 
 %build
 %{__glib_gettextize}
