@@ -1,27 +1,28 @@
 Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń do przechowywania danych
 Name:		gnome-mount
-Version:	0.5
-Release:	2
+Version:	0.6
+Release:	1
 License:	GPL v.2
 Group:		Applications
 Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
-# Source0-md5:	76622ff9af0131fc44687aed7204f84f
-Patch0:		%{name}-shortname.patch
-BuildRequires:	autoconf
+# Source0-md5:	d2612aecfa73806e072316033d78b203
+BuildRequires:	GConf2-devel >= 2.18.0.1
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.61
-BuildRequires:	gnome-keyring-devel >= 0.5.1
-BuildRequires:	gtk+2-devel >= 2:2.10.0
-BuildRequires:	hal-devel >= 0.5.8.1
-BuildRequires:	intltool
+BuildRequires:	gnome-keyring-devel >= 0.8.1
+BuildRequires:	gtk+2-devel >= 2:2.10.11
+BuildRequires:	hal-devel >= 0.5.9
+BuildRequires:	intltool >= 0.35.5
 BuildRequires:	libglade2-devel >= 1:2.6.0
-BuildRequires:	libgnomeui-devel >= 2.16.1
+BuildRequires:	libgnomeui-devel >= 2.18.1
 BuildRequires:	libnotify-devel >= 0.3.0
 BuildRequires:	libtool
-BuildRequires:	nautilus-devel >= 2.16.0
-Requires(post,preun):	GConf2 >= 2.16.0
-Requires:	nautilus >= 2.16.0
+BuildRequires:	nautilus-devel >= 2.18.1
+BuildRequires:	pkgconfig
+Requires(post,preun):	GConf2
+Requires:	nautilus >= 2.18.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +36,7 @@ przechowywania danych.
 Summary:	gnome-mount development files
 Summary(pl.UTF-8):	Pliki programistyczne gnome-mount
 Group:		Development
+Requires:	hal-devel >= 0.5.9
 Requires:	pkgconfig
 
 %description devel
@@ -45,7 +47,6 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__glib_gettextize}
@@ -84,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/nautilus/extensions-1.0/*.so
 %{_datadir}/%{name}
-%{_mandir}/man1/*
+%{_mandir}/man1/*.1*
 %{_sysconfdir}/gconf/schemas/gnome-mount.schemas
 
 %files devel
