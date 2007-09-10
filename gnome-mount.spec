@@ -2,11 +2,12 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń przechowujących dane
 Name:		gnome-mount
 Version:	0.6
-Release:	1
+Release:	2
 License:	GPL v.2
 Group:		Applications
 Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	d2612aecfa73806e072316033d78b203
+Patch0:		%{name}-pl.patch
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
@@ -47,6 +48,7 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
@@ -64,7 +66,8 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-1.0/*.{a,la}
 
