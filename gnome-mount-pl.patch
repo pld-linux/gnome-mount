@@ -1,6 +1,6 @@
 diff -urN gnome-mount-0.6.orig/po/LINGUAS gnome-mount-0.6/po/LINGUAS
 --- gnome-mount-0.6.orig/po/LINGUAS	2007-09-09 21:10:49.753961279 +0200
-+++ gnome-mount-0.6/po/LINGUAS	2007-09-10 02:03:39.727905494 +0200
++++ gnome-mount-0.6/po/LINGUAS	2007-09-10 02:55:56.251572819 +0200
 @@ -12,6 +12,7 @@
  ja
  mk
@@ -11,7 +11,7 @@ diff -urN gnome-mount-0.6.orig/po/LINGUAS gnome-mount-0.6/po/LINGUAS
  sv
 diff -urN gnome-mount-0.6.orig/po/pl.po gnome-mount-0.6/po/pl.po
 --- gnome-mount-0.6.orig/po/pl.po	1970-01-01 01:00:00.000000000 +0100
-+++ gnome-mount-0.6/po/pl.po	2007-09-10 02:03:39.727905494 +0200
++++ gnome-mount-0.6/po/pl.po	2007-09-10 02:55:56.251572819 +0200
 @@ -0,0 +1,818 @@
 +# Polish translation for gnome-mount
 +# Copyright (c) 2007 Rosetta Contributors and Canonical Ltd 2007
@@ -833,12 +833,12 @@ diff -urN gnome-mount-0.6.orig/po/pl.po gnome-mount-0.6/po/pl.po
 +msgstr "Nie"
 diff -urN gnome-mount-0.6.orig/src/gnome-mount-properties.c gnome-mount-0.6/src/gnome-mount-properties.c
 --- gnome-mount-0.6.orig/src/gnome-mount-properties.c	2007-09-09 21:10:49.253936126 +0200
-+++ gnome-mount-0.6/src/gnome-mount-properties.c	2007-09-10 02:03:51.728478280 +0200
++++ gnome-mount-0.6/src/gnome-mount-properties.c	2007-09-10 02:55:56.251572819 +0200
 @@ -27,6 +27,7 @@
  #include <libhal.h>
  #include <libhal-storage.h>
  
-+#include <glib/gi18n.h>
++#include <glib/gi18n-lib.h>
  #include <gtk/gtk.h>
  
  #include <libnautilus-extension/nautilus-extension-types.h>
@@ -869,3 +869,15 @@ diff -urN gnome-mount-0.6.orig/src/gnome-mount-properties.c gnome-mount-0.6/src/
  			gtk_widget_show (page);
  			property_page = nautilus_property_page_new ("gnome-mount-drive-properties", label, page);
  			pages = g_list_prepend (pages, property_page);
+diff -urN gnome-mount-0.6.orig/src/gnome-mount-properties-view.c gnome-mount-0.6/src/gnome-mount-properties-view.c
+--- gnome-mount-0.6.orig/src/gnome-mount-properties-view.c	2007-09-09 21:10:49.253936126 +0200
++++ gnome-mount-0.6/src/gnome-mount-properties-view.c	2007-09-10 02:56:20.752735550 +0200
+@@ -27,7 +27,7 @@
+ #include <libhal.h>
+ #include <libhal-storage.h>
+ 
+-#include <glib/gi18n.h>
++#include <glib/gi18n-lib.h>
+ #include <gtk/gtk.h>
+ #include <glade/glade.h>
+ #include <time.h>
