@@ -5,7 +5,7 @@ Version:	0.7
 Release:	1
 License:	GPL v.2
 Group:		Applications
-Source0:	http://freedesktop.org/~david/dist/%{name}-%{version}.tar.gz
+Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	6a2f14925376c2c494df89cbfbdb2ca5
 BuildRequires:	GConf2-devel >= 2.18.0.1
 BuildRequires:	autoconf >= 2.52
