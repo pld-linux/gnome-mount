@@ -2,15 +2,17 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń przechowujących dane
 Name:		gnome-mount
 Version:	0.7
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications
 Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	6a2f14925376c2c494df89cbfbdb2ca5
+Patch0:		%{name}-branch.diff
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.61
+BuildRequires:	glib2-devel >= 1:2.16.1
 BuildRequires:	gnome-keyring-devel >= 2.22.0
 BuildRequires:	gtk+2-devel >= 2:2.12.8
 BuildRequires:	hal-devel >= 0.5.9
@@ -47,6 +49,7 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__glib_gettextize}
