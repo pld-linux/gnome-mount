@@ -1,24 +1,23 @@
 Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń przechowujących dane
 Name:		gnome-mount
-Version:	0.7
-Release:	3
+Version:	0.8
+Release:	1
 License:	GPL v2
-Group:		Applications
+Group:		X11/Applications
 Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	6a2f14925376c2c494df89cbfbdb2ca5
-Patch0:		%{name}-branch.diff
+# Source0-md5:	562ec9d0196e5e000bdd249a04a3aa6a
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	dbus-glib-devel >= 0.61
+BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.16.1
 BuildRequires:	gnome-keyring-devel >= 2.22.0
-BuildRequires:	gtk+2-devel >= 2:2.12.8
+BuildRequires:	gtk+2-devel >= 2:2.12.9
 BuildRequires:	hal-devel >= 0.5.9
 BuildRequires:	intltool >= 0.36.2
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.22.01
 BuildRequires:	libnotify-devel >= 0.3.0
 BuildRequires:	libtool
 BuildRequires:	nautilus-devel >= 2.22.0
@@ -37,7 +36,7 @@ przechowujących dane.
 %package devel
 Summary:	gnome-mount development files
 Summary(pl.UTF-8):	Pliki programistyczne gnome-mount
-Group:		Development
+Group:		X11/Development/Libraries
 Requires:	hal-devel >= 0.5.9
 Requires:	pkgconfig
 
@@ -49,7 +48,6 @@ Ten pakiet zawiera pliki programistyczne gnome-mount.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__glib_gettextize}
@@ -68,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	nautilus_extensiondir=%{_libdir}/nautilus/extensions-2.0 \
 	GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/nautilus/extensions-2.0/*.{a,la}
