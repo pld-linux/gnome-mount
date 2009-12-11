@@ -24,6 +24,8 @@ BuildRequires:	nautilus-devel >= 2.22.0
 BuildRequires:	pkgconfig
 Requires(post,preun):	GConf2
 Requires:	nautilus >= 2.22.0
+Suggests:	DeviceKit-disks
+Suggests:	eject
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
