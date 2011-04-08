@@ -2,8 +2,8 @@ Summary:	Programs for mounting, unmounting and ejecting storage devices
 Summary(pl.UTF-8):	Programy do montowania, odmontowywania i wysuwania urządzeń przechowujących dane
 Name:		gnome-mount
 Version:	0.8
-Release:	1
-License:	GPL v2
+Release:	2
+License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://hal.freedesktop.org/releases/%{name}-%{version}.tar.gz
 # Source0-md5:	562ec9d0196e5e000bdd249a04a3aa6a
